@@ -1,0 +1,35 @@
+title: Start
+tags: 
+colorID: 0
+position: 531,268
+---
+<<setSpeaker house>>
+<<setPos house pos5>>
+Well now I just feel dumb.
+<<setSpeaker none>>
+I was saving these to the wrong place, so they weren't updating.
+<<setStage izzy>>
+<<setSpeaker Izzy>>
+Drats.
+-> It's okay, we all make mistakes.
+    Yeah but this took way longer than it should have.
+-> You really ought to catch those faster.
+    Yeah.
+<<setStage dice>>
+<<setSpeaker sky>>
+I've set some shortcuts for character names for my convenience.
+<<setPos sky pos5>>
+Ehehehe.
+
+<<setStage izzy>>
+<<setSpeaker zz>>
+So this should display Izzy.
+
+<<setStage dice>>
+<<setSpeaker scar>>
+AAAARRRRGGGH.
+
+<<setSpeaker none>>
+<<setStage clear>>
+Line End.
+===
