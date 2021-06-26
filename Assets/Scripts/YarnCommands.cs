@@ -13,13 +13,19 @@ public class YarnCommands : MonoBehaviour
         [SerializeField] TextMeshProUGUI speakerName;
         [SerializeField] Image dialoguePanel;
         #region Assets
-            [Header("Assets")]
+            [Header("Frame/Panel Assets")]
             [SerializeField] Sprite basePanel;
             [SerializeField] Sprite izzyPanel;
             [SerializeField] Sprite housePanel;
             [SerializeField] Sprite skyPanel;
             [SerializeField] Sprite scarletPanel;
             [SerializeField] Sprite charPanel;
+            [Header("Character Assets")]
+            [SerializeField] Sprite skyBase;
+            [SerializeField] Sprite skySmall;
+            [SerializeField] Sprite scarletBase;
+            [SerializeField] Sprite scarletSmall;
+            [Header("Background Assets")]
         #endregion
         #region Game Objects
             [Header("Game Objects")]
@@ -84,18 +90,26 @@ public class YarnCommands : MonoBehaviour
             case "sky":
                 speakerName.text = "Sky";
                 dialoguePanel.sprite = skyPanel;
+                sky.GetComponent<SpriteRenderer>().sprite = skyBase;
+                scarlet.GetComponent<SpriteRenderer>().sprite = scarletSmall;
                 break;
             case "Sky":
                 speakerName.text = "Sky";
                 dialoguePanel.sprite = skyPanel;
+                 sky.GetComponent<SpriteRenderer>().sprite = skyBase;
+                scarlet.GetComponent<SpriteRenderer>().sprite = scarletSmall;
                 break;
             case "scar":
                 speakerName.text = "Scarlet";
                 dialoguePanel.sprite = scarletPanel;
+                sky.GetComponent<SpriteRenderer>().sprite = skySmall;
+                scarlet.GetComponent<SpriteRenderer>().sprite = scarletBase;
                 break;
             case "Scar":
                 speakerName.text = "Scarlet";
                 dialoguePanel.sprite = scarletPanel;
+                sky.GetComponent<SpriteRenderer>().sprite = skySmall;
+                scarlet.GetComponent<SpriteRenderer>().sprite = scarletBase;
                 break;
             default:
                 speakerName.text = name[0];

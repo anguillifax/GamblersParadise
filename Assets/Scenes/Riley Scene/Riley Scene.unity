@@ -759,7 +759,11 @@ MonoBehaviour:
   izzyPanel: {fileID: 21300000, guid: b99ddde41a513ec40bdf442415a8a123, type: 3}
   housePanel: {fileID: 21300000, guid: e4bd067ab4c8c9448913c7b9c6ee6bf1, type: 3}
   skyPanel: {fileID: 21300000, guid: f3e2ef80378998f4c9888f00fe5d3b82, type: 3}
+  skyBase: {fileID: 21300000, guid: fcf5fae7b8e089446afec2064cf2ed59, type: 3}
+  skySmall: {fileID: 21300000, guid: fcf5fae7b8e089446afec2064cf2ed59, type: 3}
   scarletPanel: {fileID: 21300000, guid: d7d2045132d080b44bc29d1080accf41, type: 3}
+  scarletBase: {fileID: 21300000, guid: b11b108ac85fba242bd7aa35ca1c6815, type: 3}
+  scarletSmall: {fileID: 21300000, guid: b11b108ac85fba242bd7aa35ca1c6815, type: 3}
   charPanel: {fileID: 21300000, guid: b37c9492190bb6f49bd50ad38dd4e543, type: 3}
   izzy: {fileID: 589796590}
   scarlet: {fileID: 48267636}
