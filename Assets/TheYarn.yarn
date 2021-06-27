@@ -100,6 +100,7 @@ colorID: 0
 position: 961,-54
 ---
 <<PaintBackground demo>>
+<<PlayMusic encounter>>
 <<PaintSpeaker none>>
 Izzy continues through Gambler's Paradise. As she walks, walls and rooms begin to form around her. What was once an endless plane of existence suddenly shifts to a walled labyrinth with no clear way forward.
 
@@ -112,9 +113,10 @@ Somehow, she gets turned around, doubling back, getting hopelessly lost.
 <<PaintSpeaker izzy default>>
 Great.
 This is fine, just a challenge to overcome, The House said.
-<<PlaySound>>
+<<PlayMusic creepy>>
+<<PlaySound bonk>>
 What was that?
-<<PlaySound>>
+<<PlaySound bonk>>
 Oh man, what do I do?
 What is that smell? 
 It smells like...blood?
@@ -129,7 +131,7 @@ Shit!
 
 <<PaintSpeaker none>>
 Hastily turning the corner, Izzy trips and falls to the ground.
-<<PlaySound>>
+<<PlaySound bonk>>
 With a metallic clatter, the singular die slips from her pocket.
 
 <<PaintSpeaker izzy default>>
@@ -138,6 +140,7 @@ The die!
 <<PaintSpeaker none>>
 Izzy claws for the vessel and prepare for a roll. As she does, the vessel begins to glow.
 
+<<PlayMusic encounter>>
 <<PaintSpeaker scarlet>>
 Oh, is it time again? What lame-ass soul are we bound to this time?
 
@@ -163,10 +166,7 @@ Of course we can help! roll the die, if it lands on my side, we'll get you to sa
 <<PaintSpeaker scarlet>>
 Or if it rolls on mine, well, let's just say I couldn't care less about what happens to you here.
 
-<<ConfigScarletText Lose>>
-<<ConfigSkyText Win>>
-<<ConfigOutcomes Encounter.1.Scarlet Encounter.1.Sky>>
-<<BeginRoll>>
+<<PlayMusic none>>
 ===
 title: Encounter.1.Scarlet
 tags: 
