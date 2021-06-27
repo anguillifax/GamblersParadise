@@ -10,6 +10,11 @@ namespace GamblersParadise
 
 		public int SoulTokens { get; set; }
 
+		public string YarnStartNode { get; set; }
+		public bool LastRollWasScarlet { get; set; }
+		public string OutcomeScarletNode { get; set; }
+		public string OutcomeSkyNode { get; set; }
+
 		private void Awake()
 		{
 			Instance = this;
