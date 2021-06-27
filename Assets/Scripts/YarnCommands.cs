@@ -16,11 +16,18 @@ namespace GamblersParadise
 
 		public DialogueRunner dialogueRunner;
 		public AudioSource speakerSfx;
-
 		public PortraitControl portraitControl;
 		public MusicBox musicBox;
-		public Image backgroundPanel;
+		public Image[] backgroundPanels;
+		public GameObject vesselPrefab;
+		public Transform vesselLocation;
 
+		[Space]
+		public GameObject layoutNormal;
+		public GameObject layoutFocus;
+
+		private GameObject[] layouts;
+		private VesselModel vesselInstance;
 
 		// =========================================================
 		// Functions
@@ -36,6 +43,7 @@ namespace GamblersParadise
 			Bind(PaintSpeaker);
 			dialogueRunner.AddCommandHandler("sp", PaintSpeaker);
 			dialogueRunner.AddCommandHandler("S", PaintSpeaker);
+			dialogueRunner.AddCommandHandler("s", PaintSpeaker);
 			Bind(PaintBackground);
 
 			Bind(PlaySound);
@@ -44,6 +52,10 @@ namespace GamblersParadise
 			Bind(LoadScene);
 
 			Bind(ChangeTokens);
+
+			Bind(Vessel);
+
+			layouts = new GameObject[] { layoutNormal, layoutFocus };
 		}
 
 		// =========================================================
@@ -64,10 +76,48 @@ namespace GamblersParadise
 			}
 		}
 
+		private void RevealLayout(GameObject show)
+		{
+			foreach (var item in layouts) item.SetActive(false);
+			show.SetActive(true);
+		}
+
+		private void SetBackgroundPanels(Sprite sprite)
+		{
+			if (sprite == null)
+			{
+				foreach (var item in backgroundPanels)
+				{
+					item.gameObject.SetActive(false);
+				}
+			}
+			else
+			{
+				foreach (var item in backgroundPanels)
+				{
+					item.sprite = sprite;
+					item.gameObject.SetActive(true);
+				}
+			}
+		}
+
 		public void PaintBackground(string[] args)
 		{
-			var sprite = Resources.Load<Sprite>("Backgrounds/" + args[0].ToLower());
-			backgroundPanel.sprite = sprite;
+			string id = args[0].ToLower();
+			switch (id)
+			{
+				case "focus":
+					RevealLayout(layoutFocus);
+					break;
+				case "vessel":
+					RevealLayout(layoutNormal);
+					SetBackgroundPanels(args[1] == "none" ? null : Resources.Load<Sprite>("Backgrounds/" + args[1]));
+					break;
+				default:
+					RevealLayout(layoutNormal);
+					SetBackgroundPanels(Resources.Load<Sprite>("Backgrounds/" + id));
+					break;
+			}
 		}
 
 		// =========================================================
@@ -105,7 +155,39 @@ namespace GamblersParadise
 		{
 			if (int.TryParse(args[0], out int delta))
 			{
-				Debug.LogWarning("TODO change player health by " + delta);
+				GameState.Instance.SoulTokens += delta;
+			}
+		}
+
+		// =========================================================
+		// Plumbing
+		// =========================================================
+
+		public void Vessel(string[] args)
+		{
+			switch (args[0].ToLower())
+			{
+				case "spawn":
+					vesselInstance = Instantiate(vesselPrefab, vesselLocation).GetComponent<VesselModel>();
+					break;
+				case "scarlet":
+					vesselInstance.BiasScarlet();
+					break;
+				case "sky":
+					vesselInstance.BiasSky();
+					break;
+				case "roll":
+					vesselInstance.Roll();
+					break;
+				case "choose":
+					vesselInstance.Choose();
+					break;
+				case "hide":
+					Destroy(vesselLocation.GetChild(0));
+					break;
+				default:
+					Debug.LogWarning("Unknown flag " + args[0]);
+					break;
 			}
 		}
 	}

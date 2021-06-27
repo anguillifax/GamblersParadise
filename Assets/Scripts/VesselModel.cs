@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GamblersParadise
 {
-	internal class VesselModel : MonoBehaviour
+	public class VesselModel : MonoBehaviour
 	{
 		// =========================================================
 		// Variables
@@ -73,17 +73,12 @@ namespace GamblersParadise
 			}
 			yield return new WaitUntil(() => doneAnim);
 
-			doneAnim = false;
-			Invoke(nameof(SetAnimDone), 4f);
 			while (true)
 			{
 				body.AddTorque(force, ForceMode.Acceleration);
-				if (doneAnim) break;
 				yield return new WaitForFixedUpdate();
 			}
 
-			GenerateAnswer();
-			Destroy(gameObject);
 		}
 
 		public void BiasEqual()
@@ -116,13 +111,16 @@ namespace GamblersParadise
 			icons[5].Set(false);
 		}
 
-		private void GenerateAnswer()
+		public void Choose()
 		{
+			StopAllCoroutines();
+
 			int val = UnityEngine.Random.Range(0, 6);
 			bool isScarlet = icons[val].IsScarlet;
-			Instantiate(isScarlet ? effectScarlet : effectSky, transform.position, Quaternion.identity);
-			VesselOutcomeControl.Instance.SelectOutcome(isScarlet);
+			Instantiate(isScarlet ? effectScarlet : effectSky, transform.position, Quaternion.identity, transform.parent);
 			if (GameState.Instance) GameState.Instance.LastRollWasScarlet = isScarlet;
+
+			Destroy(gameObject);
 		}
 	}
 }
