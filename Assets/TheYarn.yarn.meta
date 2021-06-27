@@ -1,0 +1,83 @@
+fileFormatVersion: 2
+guid: f571a474938f4b240a7dfdfa38949e96
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - TheYarn-Start-0
+  - TheYarn-Start-1
+  - TheYarn-Start-2
+  - TheYarn-Start-3
+  - TheYarn-Intro-4
+  - TheYarn-Intro-5
+  - TheYarn-Intro-6
+  - TheYarn-Intro-7
+  - TheYarn-Intro-8
+  - TheYarn-Intro-9
+  - TheYarn-Intro-10
+  - TheYarn-Intro-11
+  - TheYarn-Intro-12
+  - TheYarn-Intro-13
+  - TheYarn-Intro-14
+  - TheYarn-Intro-15
+  - TheYarn-Intro-16
+  - TheYarn-Intro-17
+  - TheYarn-Intro-18
+  - TheYarn-Intro-19
+  - TheYarn-Intro-20
+  - TheYarn-Intro-21
+  - TheYarn-Intro-22
+  - TheYarn-Intro-23
+  - TheYarn-Intro-24
+  - TheYarn-Intro-25
+  - TheYarn-Intro-26
+  - TheYarn-Intro-27
+  - TheYarn-Intro-28
+  - TheYarn-Intro-29
+  - TheYarn-Intro-30
+  - TheYarn-Intro-31
+  - TheYarn-Intro-32
+  - TheYarn-Intro-33
+  - TheYarn-Intro-34
+  - TheYarn-Intro-35
+  - TheYarn-Intro-36
+  - TheYarn-Intro-37
+  - TheYarn-Encounter.1-38
+  - TheYarn-Encounter.1-39
+  - TheYarn-Encounter.1-40
+  - TheYarn-Encounter.1-41
+  - TheYarn-Encounter.1-42
+  - TheYarn-Encounter.1-43
+  - TheYarn-Encounter.1-44
+  - TheYarn-Encounter.1-45
+  - TheYarn-Encounter.1-46
+  - TheYarn-Encounter.1-47
+  - TheYarn-Encounter.1-48
+  - TheYarn-Encounter.1-49
+  - TheYarn-Encounter.1-50
+  - TheYarn-Encounter.1-51
+  - TheYarn-Encounter.1-52
+  - TheYarn-Encounter.1-53
+  - TheYarn-Encounter.1-54
+  - TheYarn-Encounter.1-55
+  - TheYarn-Encounter.1-56
+  - TheYarn-Encounter.1-57
+  - TheYarn-Encounter.1-58
+  - TheYarn-Encounter.1-59
+  - TheYarn-Encounter.1-60
+  - TheYarn-Encounter.1-61
+  - TheYarn-Encounter.1-62
+  - TheYarn-Encounter.1-63
+  - TheYarn-Encounter.1.Scarlet-64
+  - TheYarn-Encounter.1.Sky-65
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: f571a474938f4b240a7dfdfa38949e96, type: 3}
+  localizations: []

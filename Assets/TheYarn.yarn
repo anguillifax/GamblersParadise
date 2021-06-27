@@ -1,0 +1,186 @@
+title: Start
+tags: 
+colorID: 0
+position: 54,280
+---
+<<PaintSpeaker izzy default>>
+<<PaintBackground demo>>
+Line 1
+
+<<PaintSpeaker none>>
+Line 2
+
+<<PaintSpeaker scarlet>>
+Line 3
+
+<<PaintSpeaker sky>>
+Line End
+===
+title: Intro
+tags: 
+colorID: 0
+position: 602,-55
+---
+<<PaintBackground demo>>
+<<PaintSpeaker none>>
+A young woman awakens, the realm around her foreign and unwelcoming.
+
+<<PaintSpeaker izzy default>>
+Hnnmgh...What...where am I?
+
+<<PaintSpeaker none>>
+The world around her seems to stretch into infinity, each direction as empty as the next.
+
+<<PaintSpeaker izzy default>>
+Hello?
+
+<<PaintSpeaker house default>>
+Greetings, human. Welcome to my home.
+I call it Gambler's Paradise!
+It's a play on words, you see.
+
+<<PaintSpeaker izzy default>>
+Who are you? Why am I here?
+
+<<PaintSpeaker house default>>
+Questions, questions, questions. All in due time, human.
+You may refer to me as The House.
+I am a humble being. All that I desire is to see humans such as yourself overcome trials.
+The path before you will be filled with such trials. If you overcome them, you may find a way to return home.
+
+<<PaintSpeaker izzy default>>
+And if I don't beat these "trials"?
+
+<<PaintSpeaker house default>>
+Well, stay positive, I always say.
+Take this vessel with you.
+
+<<PaintSpeaker izzy default>>
+A die?
+
+<<PaintSpeaker house default>>
+Things work differently in my domain.
+While I do love to see what you humans call free will, many decisions you make will be decided by this vessel. 
+You may also use its power to escape tricky situations, if the odds are in your favor.
+Should you feel strongly compelled, you may expend one of these...
+
+<<PaintSpeaker none>>
+The House pulls out a small piece resembling a poke chip.
+
+<<PaintSpeaker house default>>
+This is a Soul Token, a valuable resource. Will it to be so, and you will spend a Soul Token to push the odds of a dice roll.
+Run out of Soul Tokens, however, and the game ends.
+
+<<PaintSpeaker izzy default>>
+...Meaning I go home?
+
+<<PaintSpeaker house default>>
+Meaning you will be spending a lot more time here in Gambler's Paradise.
+Quite simply, do not lose all of your Soul Tokens. That is all.
+Follow this path and overcome any challenges that you come across. 
+I shall be watching.
+
+<<PaintSpeaker izzy default>>
+I don't know about all this.
+
+<<PaintSpeaker house default>>
+You don't have a choice.
+Oh, and try to make it at least a little bit entertaining.
+Ta-ta.
+
+<<PaintSpeaker none>>
+The House seems to fade out of existence, leaving Izzy all alone with only the die and a few Soul Tokens.
+
+<<PaintSpeaker izzy default>>
+I guess the only way to go is forwards.
+===
+title: Encounter.1
+tags: 
+colorID: 0
+position: 961,-54
+---
+<<PaintBackground demo>>
+<<PaintSpeaker none>>
+Izzy continues through Gambler's Paradise. As she walks, walls and rooms begin to form around her. What was once an endless plane of existence suddenly shifts to a walled labyrinth with no clear way forward.
+
+<<PaintSpeaker izzy default>>
+Ummm...this way, I think?
+
+<<PaintSpeaker none>>
+Somehow, she gets turned around, doubling back, getting hopelessly lost.
+
+<<PaintSpeaker izzy default>>
+Great.
+This is fine, just a challenge to overcome, The House said.
+<<PlaySound>>
+What was that?
+<<PlaySound>>
+Oh man, what do I do?
+What is that smell? 
+It smells like...blood?
+What the hell is happening? Some paradise this is!
+
+<<PaintSpeaker none>>
+Growing frantic, Izzy picks up her pace, walking briskly in the direction she hopes is forward.
+No matter where she goes, the sound grows louder and the smell stronger.
+
+<<PaintSpeaker izzy default>>
+Shit!
+
+<<PaintSpeaker none>>
+Hastily turning the corner, Izzy trips and falls to the ground.
+<<PlaySound>>
+With a metallic clatter, the singular die slips from her pocket.
+
+<<PaintSpeaker izzy default>>
+The die!
+
+<<PaintSpeaker none>>
+Izzy claws for the vessel and prepare for a roll. As she does, the vessel begins to glow.
+
+<<PaintSpeaker scarlet>>
+Oh, is it time again? What lame-ass soul are we bound to this time?
+
+<<PaintSpeaker sky>>
+Try to be nice, Scarlet. She's clearly a little shaken.
+
+<<PaintSpeaker izzy default>>
+What the hell? It talked?
+
+<<PaintSpeaker scarlet>>
+It tAlkEd, she says.
+
+<<PaintSpeaker izzy default>>
+Look, something's chasing me, I need your help.
+Can you do something about it or not?
+
+<<PaintSpeaker scarlet>>
+Oh? And why should I help you out?
+
+<<PaintSpeaker sky>>
+Of course we can help! roll the die, if it lands on my side, we'll get you to safety.
+
+<<PaintSpeaker scarlet>>
+Or if it rolls on mine, well, let's just say I couldn't care less about what happens to you here.
+
+<<ConfigScarletText Lose>>
+<<ConfigSkyText Win>>
+<<ConfigOutcomes Encounter.1.Scarlet Encounter.1.Sky>>
+<<BeginRoll>>
+===
+title: Encounter.1.Scarlet
+tags: 
+colorID: 0
+position: 853,179
+---
+<<PaintSpeaker scarlet>>
+Haha, Sucker.
+===
+title: Encounter.1.Sky
+tags: 
+colorID: 0
+position: 1070,178
+---
+<<PaintSpeaker sky>>
+Nice.
+===
