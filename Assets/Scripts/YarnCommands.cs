@@ -168,6 +168,7 @@ namespace GamblersParadise
 			switch (args[0].ToLower())
 			{
 				case "spawn":
+					vesselLocation.gameObject.SetActive(true);
 					vesselInstance = Instantiate(vesselPrefab, vesselLocation).GetComponent<VesselModel>();
 					break;
 				case "scarlet":
@@ -183,6 +184,12 @@ namespace GamblersParadise
 					vesselInstance.Choose();
 					break;
 				case "hide":
+					vesselLocation.gameObject.SetActive(false);
+					break;
+				case "show":
+					vesselLocation.gameObject.SetActive(true);
+					break;
+				case "destroy":
 					Util.DestroyChildObjects(vesselLocation);
 					break;
 				default:

@@ -15,11 +15,13 @@ namespace GamblersParadise
 		public string OutcomeScarletNode { get; set; }
 		public string OutcomeSkyNode { get; set; }
 
+		public int startTokenCount = 3;
+
 		private void Awake()
 		{
 			Instance = this;
 
-			SoulTokens = 3;
+			SoulTokens = startTokenCount;
 		}
 	}
 }

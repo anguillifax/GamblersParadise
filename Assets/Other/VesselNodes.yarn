@@ -56,11 +56,17 @@ position: 717,57
 <<Vessel roll>>
 Let's go.
 
+<<Vessel hide>>
+Bye
+
+<<Vessel show>>
+Welcome back
+
 <<Vessel choose>>
 <<PlaySound bonk>>
 It lands.
 
-<<Vessel hide>>
+<<Vessel destroy>>
 <<if $wasScarlet>>
     [[OutcomeScarlet]]
 <<else>>
