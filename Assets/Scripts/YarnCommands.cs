@@ -4,32 +4,23 @@ using Yarn.Unity;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 namespace GamblersParadise
 {
 	public class YarnCommands : MonoBehaviour
 	{
-		[Serializable]
-		public struct RollParams
-		{
-			public string scarletOptionText;
-			public string scarletOutcome;
-			public string towardScarletRebuke;
-
-			public string skyOptionText;
-			public string skyOutcome;
-			public string towardSkyRebuke;
-		}
-
 		// =========================================================
 		// Variables
 		// =========================================================
 
 		public DialogueRunner dialogueRunner;
+		public AudioSource speakerSfx;
 
 		public PortraitControl portraitControl;
+		public MusicBox musicBox;
 		public Image backgroundPanel;
-		public RollParams rollParams;
+
 
 		// =========================================================
 		// Functions
@@ -43,15 +34,14 @@ namespace GamblersParadise
 			}
 
 			Bind(PaintSpeaker);
+			dialogueRunner.AddCommandHandler("sp", PaintSpeaker);
+			dialogueRunner.AddCommandHandler("S", PaintSpeaker);
 			Bind(PaintBackground);
 
-			Bind(LoadScene);
+			Bind(PlaySound);
+			Bind(PlayMusic);
 
-			Bind(ConfigScarletText);
-			Bind(ConfigSkyText);
-			Bind(ConfigOutcomes);
-			Bind(ConfigRebukes);
-			Bind(BeginRoll);
+			Bind(LoadScene);
 
 			Bind(ChangeTokens);
 		}
@@ -84,44 +74,27 @@ namespace GamblersParadise
 		// Sound
 		// =========================================================
 
+		public void PlaySound(string[] args)
+		{
+			AudioClip sound = Resources.Load<AudioClip>("Sounds/" + args[0].ToLower());
+			if (sound != null)
+			{
+				speakerSfx.PlayOneShot(sound);
+			}
+		}
+
+		public void PlayMusic(string[] args)
+		{
+			musicBox.Play(args[0]);
+		}
+
 		// =========================================================
 		// Transitions
 		// =========================================================
 
 		public void LoadScene(string[] args)
 		{
-			SceneManager.LoadScene(args[0]);
-		}
-
-		// =========================================================
-		// Vessel Roll
-		// =========================================================
-
-		public void ConfigScarletText(string[] args)
-		{
-			rollParams.scarletOptionText = string.Join(" ", args);
-		}
-
-		public void ConfigSkyText(string[] args)
-		{
-			rollParams.skyOptionText = string.Join(" ", args);
-		}
-
-		public void ConfigOutcomes(string[] args)
-		{
-			rollParams.scarletOutcome = args[0];
-			rollParams.skyOutcome = args[1];
-		}
-
-		public void ConfigRebukes(string[] args)
-		{
-			rollParams.towardScarletRebuke = args[0];
-			rollParams.towardSkyRebuke = args[1];
-		}
-
-		public void BeginRoll(string[] args)
-		{
-			Debug.LogWarning("Roll not implemented yet");
+			SceneManager.LoadScene(args[0].ToLower());
 		}
 
 		// =========================================================

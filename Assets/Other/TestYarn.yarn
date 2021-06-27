@@ -3,8 +3,8 @@ tags:
 colorID: 0
 position: 455,16
 ---
-<<PaintSpeaker izzy default>>
 <<PaintBackground demo>>
+<<sp izzy>>
 Line 1
 
 <<PaintSpeaker none>>
@@ -15,4 +15,22 @@ Line 3
 
 <<PaintSpeaker sky>>
 Line End
+===
+title: Test
+tags: 
+colorID: 1
+position: 812,20
+---
+<<sp none>>
+<<PlayMusic encounter>>
+Deploying encounter sound.
+
+<<PlaySound bonk>>
+Go to jail
+
+<<PlayMusic creepy>>
+Switch to creepy.
+
+<<PlayMusic none>>
+Stopping.
 ===
