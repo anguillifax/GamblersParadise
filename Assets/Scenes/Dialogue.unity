@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yarnScripts:
   - {fileID: 2480198943629176163, guid: 34159035eb14db4459ea725b0c655068, type: 3}
+  - {fileID: 2480198943629176163, guid: f571a474938f4b240a7dfdfa38949e96, type: 3}
   textLanguage: 
   variableStorage: {fileID: 301725727}
   dialogueUI: {fileID: 301725728}
