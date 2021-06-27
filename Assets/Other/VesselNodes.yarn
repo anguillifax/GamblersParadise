@@ -1,0 +1,69 @@
+title: RollVessel
+tags: 
+colorID: 0
+position: 455,16
+---
+<<PaintBackground focus>>
+You feel yourself ripped through the fabric of space.
+
+<<PaintBackground vessel none>>
+<<s none>>
+Welcome to the Vessel Rolling Diegetic UI (tm)!
+
+<<Vessel spawn>>
+Here's what your vessel looks like.
+
+Care to spend soul tokens to alter your vessel?
+-> Alter (-1 tokens)
+-> Just Roll
+    [[VesselRollExecute]]
+
+Toward who?
+-> Scarlet
+    <<Vessel scarlet>>
+    <<ChangeTokens -1>>
+    Toward scarlet. (That will cost you!) Tokens {$tokens}.
+-> Sky
+    <<Vessel sky>>
+    <<ChangeTokens -1>>
+    Toward sky. (That will cost you!) Tokens {$tokens}.
+
+[[VesselRollExecute]]
+===
+title: OutcomeScarlet
+tags: 
+colorID: 0
+position: 568,-249
+---
+<<PaintBackground demo>>
+<<s scarlet>>
+You landed on scarlet
+===
+title: OutcomeSky
+tags: 
+colorID: 0
+position: 789,-249
+---
+<<PaintBackground demo>>
+<<s sky>>
+You landed on sky
+===
+title: VesselRollExecute
+tags: 
+colorID: 0
+position: 717,57
+---
+<<Vessel roll>>
+Let's go.
+
+<<Vessel choose>>
+<<PlaySound bonk>>
+It lands.
+
+<<Vessel hide>>
+<<if $wasScarlet>>
+    [[OutcomeScarlet]]
+<<else>>
+    [[OutcomeSky]]
+<<endif>>
+===

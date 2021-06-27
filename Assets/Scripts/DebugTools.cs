@@ -5,13 +5,11 @@ using Yarn.Unity;
 
 namespace GamblersParadise
 {
-	internal class DebugTools : MonoBehaviour
+	public class DebugTools : MonoBehaviour
 	{
-		public DialogueRunner dialogueRunner;
-
-		public void PlayNode(string node)
+		public void Print(string msg)
 		{
-			dialogueRunner.StartDialogue(node);
+			Debug.Log(msg);
 		}
 	}
 }

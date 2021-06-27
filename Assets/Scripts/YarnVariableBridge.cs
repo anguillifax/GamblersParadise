@@ -14,6 +14,7 @@ namespace GamblersParadise
 			switch (variableName)
 			{
 				case "tokens": return new Value(GameState.Instance.SoulTokens);
+				case "wasScarlet": return new Value(GameState.Instance.LastRollWasScarlet);
 				default: return Value.NULL;
 			}
 		}

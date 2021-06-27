@@ -183,7 +183,7 @@ namespace GamblersParadise
 					vesselInstance.Choose();
 					break;
 				case "hide":
-					Destroy(vesselLocation.GetChild(0));
+					Util.DestroyChildObjects(vesselLocation);
 					break;
 				default:
 					Debug.LogWarning("Unknown flag " + args[0]);
