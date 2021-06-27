@@ -1,7 +1,7 @@
-title: Start
+title: Test
 tags: 
-colorID: 0
-position: 54,280
+colorID: 8
+position: -8,-55
 ---
 <<PaintSpeaker izzy default>>
 <<PaintBackground demo>>
@@ -18,13 +18,15 @@ Line End
 ===
 title: Intro
 tags: 
-colorID: 0
-position: 602,-55
+colorID: 1
+position: 595,-58
 ---
-<<PaintBackground demo>>
+<<PaintBackground focus>>
 <<PaintSpeaker none>>
-A young woman awakens, the realm around her foreign and unwelcoming.
+Like the sand in an hourglass, the world slips away.
+A young woman wakes up, her surroundings foreign.
 
+<<PaintBackground demo>>
 <<PaintSpeaker izzy default>>
 Hnnmgh...What...where am I?
 
@@ -64,6 +66,7 @@ While I do love to see what you humans call free will, many decisions you make w
 You may also use its power to escape tricky situations, if the odds are in your favor.
 Should you feel strongly compelled, you may expend one of these...
 
+<<PlaySound bonk>>
 <<PaintSpeaker none>>
 The House pulls out a small piece resembling a poke chip.
 
@@ -93,17 +96,20 @@ The House seems to fade out of existence, leaving Izzy all alone with only the d
 
 <<PaintSpeaker izzy default>>
 I guess the only way to go is forwards.
+
+[[Encounter.1]]
 ===
 title: Encounter.1
 tags: 
-colorID: 0
-position: 961,-54
+colorID: 2
+position: 940,-68
 ---
-<<PaintBackground demo>>
-<<PlayMusic encounter>>
+<<PaintBackground focus>>
+<<PlayMusic creepy>>
 <<PaintSpeaker none>>
 Izzy continues through Gambler's Paradise. As she walks, walls and rooms begin to form around her. What was once an endless plane of existence suddenly shifts to a walled labyrinth with no clear way forward.
 
+<<PaintBackground demo>>
 <<PaintSpeaker izzy default>>
 Ummm...this way, I think?
 
@@ -113,10 +119,19 @@ Somehow, she gets turned around, doubling back, getting hopelessly lost.
 <<PaintSpeaker izzy default>>
 Great.
 This is fine, just a challenge to overcome, The House said.
-<<PlayMusic creepy>>
+
+<<sp none>>
 <<PlaySound bonk>>
+(An eerie noise)
+
+<<sp izzy default>>
 What was that?
+
+<<sp none>>
 <<PlaySound bonk>>
+(The eerie noise gets closer)
+
+<<sp izzy default>>
 Oh man, what do I do?
 What is that smell? 
 It smells like...blood?
@@ -161,26 +176,269 @@ Can you do something about it or not?
 Oh? And why should I help you out?
 
 <<PaintSpeaker sky>>
-Of course we can help! roll the die, if it lands on my side, we'll get you to safety.
+Of course we can help! Roll the die, if it lands on my side, we'll get you to safety.
 
 <<PaintSpeaker scarlet>>
 Or if it rolls on mine, well, let's just say I couldn't care less about what happens to you here.
 
+<<s izzy default>>
+Great, here goes nothing.
 <<PlayMusic none>>
+
+<<PaintBackground vessel none>>
+<<s none>>
+<<Vessel spawn>>
+Even odds... I have {$tokens} [plural {$tokens} one = "Soul Token" other = "Soul Tokens"], should I spend one to change them?
+    ->Yes!
+    ->No, Just Roll
+        [[Encounter.1.Roll]]
+Do I skew it towards Scarlet or Sky?
+    ->Scarlet
+        <<Vessel scarlet>>
+        <<ChangeTokens -1>>
+        Wait really? Really?
+        Your first roll and you're throwing a coin my way?
+        Sky, I think this one has a deathwish.
+    ->Sky
+        <<Vessel sky>>
+        <<ChangeTokens -1>>
+        Wow, look at the bigshot over here.
+        Their first roll and they're already using a Soul Token!
+        You probably did the same when you were in this position.
+        There is nothing wrong with wanting to be safe.
+[[Encounter.1.Roll]]
 ===
 title: Encounter.1.Scarlet
 tags: 
-colorID: 0
-position: 853,179
+colorID: 2
+position: 1049,308
 ---
+<<PaintBackground demo>>
 <<PaintSpeaker scarlet>>
-Haha, Sucker.
+<<PlayMusic creepy>>
+Hehehe, let's have some fun.
+
+<<PaintBackground focus>>
+<<s none>>
+With an eerie red glow, the die illuminates the maze. Izzy shields her eyes.
+<<PlayMusic none>>
+When she opens them, all is quiet.
+
+<<PaintBackground demo>>
+<<s izzy default>>
+What just happened?
+
+<<PaintBackground focus>>
+<<PlaySound bonk>>
+(Slashing sound)
+
+<<ChangeTokens -1>>
+<<PaintBackground demo>>
+Izzy wakes up with a start, gasping for breath. Her hands grab at her neck, still intact.
+
+<<s izzy default>>
+Did I die?!
+
+<<PlayMusic encounter>>
+<<s scarlet>>
+Ha! You should have seen your face.
+It's the small things in eternity bound to a die.
+
+<<s sky>>
+Thanks to Scarlet here, you have failed the challenge.
+You are still 'alive', but at a cost.
+
+<<s izzy default>>
+My Soul Tokens! I only have {$tokens} left.
+
+<<s scarlet>>
+What's your name, loser?
+
+<<s izzy default>>
+It's Izzy.
+
+<<s scarlet>>
+Well Izzwald, you better hope luck is in your favor next time!
+Because I for one can't wait to see you trapped here forever.
+
+<<s izzy default>>
+Gee, thanks.
+<<PlayMusic none>>
+
+[[Observation.1]]
 ===
 title: Encounter.1.Sky
 tags: 
-colorID: 0
-position: 1070,178
+colorID: 2
+position: 1363,283
 ---
+<<PaintBackground demo>>
 <<PaintSpeaker sky>>
-Nice.
+Alright, my time to shine!
+
+<<PaintBackground focus>>
+<<s none>>
+With a calm, blue glow, the die illuminates the maze in a flash. Izzy shields her eyes.
+<<PaintBackground demo>>
+When she opens them, the maze is gone.
+
+<<PlayMusic encounter>>
+<<s izzy default>>
+What happened?
+
+<<s sky>>
+Oh, just a little magic.
+We vessel-bound spirits get to bend the rules a little when the situation calls for it.
+
+<<s scarlet>>
+Showoff.
+
+<<s sky>>
+What's your name, dear?
+
+<<s izzy>>
+It's Izzy.
+
+<<s sky>>
+Alright, Izzy. I'm going to try my best to keep you safe and help you get back home.
+
+<<s izzy>>
+Gee, thanks!
+
+<<s scarlet>>
+Yeah, we'll just see how long you last.
+
+<<PlayMusic none>>
+[[Observation.1]]
+===
+title: SampleRollVessel
+tags: 
+colorID: 8
+position: -213,318
+---
+<<PaintBackground focus>>
+Izzy prepares to roll...
+
+<<PaintBackground vessel none>>
+<<s none>>
+
+<<Vessel spawn>>
+<<if $tokens >1 >>
+    Even odds... I have {$tokens} [plural {$tokens} one = "Soul Token" other = "Soul Tokens"], should I spend one to change them?
+    Care to spend soul tokens to alter your vessel?
+    -> Yes!
+    -> No, Just Roll
+        (Jump to Roll Node)
+    Toward who?
+    -> Scarlet
+        <<Vessel scarlet>>
+        <<ChangeTokens -1>>
+        Hah, sucker!
+    -> Sky
+        <<Vessel sky>>
+        <<ChangeTokens -1>>
+        I hope this is enough.
+<<else>>
+    Even odds...Looks like all I can do is roll for it.
+    (Jump to Roll Node)
+<<endif>>
+===
+title: SampleVesselRollExecute
+tags: 
+colorID: 8
+position: 152,277
+---
+<<Vessel roll>>
+Let's go.
+
+<<Vessel choose>>
+<<PlaySound bonk>>
+It lands.
+
+<<Vessel hide>>
+<<if $wasScarlet>>
+    OutcomeScarlet
+<<else>>
+    OutcomeSky
+<<endif>>
+===
+title: SampleOutcomeScarlet
+tags: 
+colorID: 8
+position: 7,626
+---
+Empty Text
+===
+title: SampleOutcomeSky
+tags: 
+colorID: 8
+position: 279,619
+---
+Empty Text
+===
+title: Encounter.1.Roll
+tags: 
+colorID: 2
+position: 1251,-29
+---
+<<Vessel roll>>
+Please save me...
+
+<<Vessel choose>>
+<<PlaySound bonk>>
+Your fate is sealed.
+
+<<Vessel hide>>
+<<if $wasScarlet>>
+    [[Encounter.1.Scarlet]]
+<<else>>
+    [[Encounter.1.Sky]]
+<<endif>>
+===
+title: Observation.1
+tags: 
+colorID: 3
+position: 1662,640
+---
+<<PaintBackground focus>>
+<<s none>>
+Elsewhere in Gambler's Paradise...
+
+<<PaintBackground demo>>
+<<s house default>>
+One encounter in and they already seem shaken.
+<<if $tokens eq 1>>
+    As entertaining as it was to see them lose so much so fast, I can't have them end things too quickly now.
+    <<ChangeTokens 1>>
+    We'll just give them a little help this once.
+    <<PaintBackground focus>>
+    <<s none>>
+    Somewhere...
+    
+    <<PaintBackground demo>>
+    <<s izzy default>>
+    Huh? I thought I was down to 1 Soul Token, but it seems now I have {$tokens}.
+
+    <<s sky>>
+    Take your blessings I suppose!
+    [[Encounter.2]]
+<<elseif $tokens <3>>
+    They've already lost a Soul Token, how exciting.
+<<endif>>
+I can't wait to see what they do next.
+
+[[Encounter.2]]
+===
+title: Encounter.2
+tags: 
+colorID: 2
+position: 1860,103
+---
+<<PaintBackground focus>>
+<<s none>>
+Deeper in the endless depths of Gambler's Paradise...
+
+<<PaintBackground demo>>
+<<s izzy>>
+Whew, lot of walking huh.
 ===
