@@ -8,6 +8,8 @@ namespace GamblersParadise
 {
 	public class YarnVariableBridge : VariableStorageBehaviour
 	{
+		private readonly Dictionary<string, Value> dict = new Dictionary<string, Value>();
+
 		public override Value GetValue(string variableName)
 		{
 			variableName = variableName.Substring(1);
@@ -15,7 +17,15 @@ namespace GamblersParadise
 			{
 				case "tokens": return new Value(GameState.Instance.SoulTokens);
 				case "wasScarlet": return new Value(GameState.Instance.LastRollWasScarlet);
-				default: return Value.NULL;
+			}
+
+			if (dict.TryGetValue(variableName, out Value value))
+			{
+				return value;
+			}
+			else
+			{
+				return Value.NULL;
 			}
 		}
 
@@ -25,6 +35,7 @@ namespace GamblersParadise
 
 		public override void SetValue(string variableName, Value value)
 		{
+			dict[variableName] = value;
 		}
 	}
 }
