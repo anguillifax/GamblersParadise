@@ -12,8 +12,7 @@ namespace GamblersParadise
 
 		public override Value GetValue(string variableName)
 		{
-			variableName = variableName.Substring(1);
-			switch (variableName)
+			switch (variableName.Substring(1))
 			{
 				case "tokens": return new Value(GameState.Instance.SoulTokens);
 				case "wasScarlet": return new Value(GameState.Instance.LastRollWasScarlet);
