@@ -19,7 +19,7 @@ Line End
 title: Intro
 tags: 
 colorID: 1
-position: 593,-64
+position: 590,-66
 ---
 <<PaintBackground focus>>
 <<PaintSpeaker none>>
@@ -37,6 +37,7 @@ The world around her seems to stretch into infinity, each direction as empty as 
 <<PaintSpeaker izzy default>>
 Hello?
 
+<<PlaySound creepylaugh>>
 <<PaintSpeaker house default>>
 Greetings, human. Welcome to my home.
 I call it Gambler's Paradise!
@@ -97,18 +98,20 @@ The House seems to fade out of existence, leaving Izzy all alone with only the d
 
 <<PaintSpeaker izzy default>>
 I guess the only way to go is forwards.
-
+<<PlayMusic none>>
 [[Encounter.1]]
 ===
 title: Encounter.1
 tags: 
 colorID: 2
-position: 939,-72
+position: 933,-78
 ---
 <<PaintBackground focus>>
 <<PlayMusic creepy>>
 <<PaintSpeaker none>>
-Izzy continues through Gambler's Paradise. As she walks, walls and rooms begin to form around her. What was once an endless plane of existence suddenly shifts to a walled labyrinth with no clear way forward.
+Izzy continues through Gambler's Paradise. As she walks, walls and rooms begin to form around her. 
+<<PlaySound creepylaugh>>
+What was once an endless plane of existence suddenly shifts to a walled labyrinth with no clear way forward.
 
 <<PaintBackground demo>>
 <<PaintSpeaker izzy default>>
@@ -134,9 +137,9 @@ What was that?
 
 <<sp izzy default>>
 Oh man, what do I do?
-What is that smell? 
+Is that...
 It smells like...blood?
-What the hell is happening? Some paradise this is!
+What the hell is happening? What type of paradise is this!
 
 <<PaintSpeaker none>>
 Growing frantic, Izzy picks up her pace, walking briskly in the direction she hopes is forward.
@@ -185,31 +188,7 @@ Or if it rolls on mine, well, let's just say I couldn't care less about what hap
 <<s izzy default>>
 Great, here goes nothing.
 <<PlayMusic none>>
-
-<<PaintBackground vessel none>>
-<<s none>>
-<<Vessel spawn>>
-Even odds... I have {$tokens} [plural {$tokens} one = "Soul Token" other = "Soul Tokens"], should I spend one to change them?
-    ->Yes!
-    ->No, Just Roll
-        [[Encounter.1.Roll]]
-Do I skew it towards Scarlet or Sky?
-    ->Scarlet
-        <<Vessel scarlet>>
-        <<ChangeTokens -1>>
-        <<PlaySound token1>>
-        Wait really? Really?
-        Your first roll and you're throwing a coin my way?
-        Sky, I think this one has a deathwish.
-    ->Sky
-        <<Vessel sky>>
-        <<ChangeTokens -1>>
-        <<PlaySound token1>>
-        Wow, look at the bigshot over here.
-        Their first roll and they're already using a Soul Token!
-        You probably did the same when you were in this position.
-        There is nothing wrong with wanting to be safe.
-[[Encounter.1.Roll]]
+[[Encounter.1.Roll.1]]
 ===
 title: Encounter.1.Scarlet
 tags: 
@@ -219,6 +198,7 @@ position: 1049,308
 <<PaintBackground demo>>
 <<PaintSpeaker scarlet>>
 <<PlayMusic creepy>>
+<<PlaySound badroll>>
 Hehehe, let's have some fun.
 
 <<PaintBackground focus>>
@@ -273,9 +253,10 @@ Gee, thanks.
 title: Encounter.1.Sky
 tags: 
 colorID: 2
-position: 1380,319
+position: 1378,317
 ---
 <<PaintBackground demo>>
+<<PlaySound goodroll>>
 <<PaintSpeaker sky>>
 Alright, my time to shine!
 
@@ -379,12 +360,14 @@ position: 279,619
 ---
 Empty Text
 ===
-title: Encounter.1.Roll
+title: Encounter.1.Roll.2
 tags: 
 colorID: 2
-position: 1246,-34
+position: 1366,41
 ---
 <<Vessel roll>>
+<<wait 0.4>>
+<<PlaySound dice2>>
 Please save me...
 
 <<Vessel choose>>
@@ -401,7 +384,7 @@ Your fate is sealed.
 title: Observation.1
 tags: 
 colorID: 3
-position: 1659,640
+position: 1657,638
 ---
 <<PaintBackground focus>>
 <<PlayMusic creepyalt>>
@@ -437,13 +420,318 @@ I can't wait to see what they do next.
 title: Encounter.2
 tags: 
 colorID: 2
-position: 1860,103
+position: 1850,86
 ---
 <<PaintBackground focus>>
 <<s none>>
 Deeper in the endless depths of Gambler's Paradise...
 
+<<PlayMusic encounter>>
 <<PaintBackground demo>>
 <<s izzy>>
-Whew, lot of walking huh.
+So, your names are Scarlet and Sky, right?
+
+<<s sky>>
+That's us!
+
+<<s izzy>>
+And you'll help me with these challenges?
+
+<<s scarlet>>
+Well, maybe Sky will.
+Honestly, you don't stand a chance, so I find it way more fun to watch you suffer instead.
+
+<<s izzy>>
+What is your problem?
+
+<<s scarlet>>
+WhAt iS yOuR ProBlEm?
+Existence in Gambler's Paradise is pain, get used to it.
+
+<<PaintBackground focus>>
+<<s none>>
+<<PlayMusic none>>
+<<PlaySound creepylaugh>>
+As Scarlet sneers at Izzy, the world around them shifts. 
+Izzy drops to the ground, which begins to rise upwards.
+<<PlayMusic creepy>>
+The paths of Gambler's Paradise transform into a hellish obstacle course of twisting walkways and moving platforms.
+Below, the endless void beckons for any who might lose their footing.
+
+<<PaintBackground demo>>
+<<s sky>>
+Oh, I love this challenge.
+Don't look down, Izzy.
+
+<<s izzy>>
+What happens if I fall?
+
+<<s scarlet>>
+What do you think happens when a human body falls a great distance?
+You either fall forever into the void, or hit a pathway below.
+Crack!
+
+<<s sky>>
+Stay strong, Izzy. To beat this challenge, you simply need to make it across the pathway ahead.
+
+<<s izzy>>
+I'll try.
+
+<<s none>>
+The pathway seems to grow thinner and less steady the further Izzy goes.
+Just as Izzy is about to make it across, a scared voice calls to them.
+
+<<s none>>
+"Hey! Help me, please!"
+
+<<s izzy>>
+It's a person!
+
+<<s scarlet>>
+You think you're the only lost soul here? Think again, sunshine.
+
+<<s izzy>>
+Can we help him? I won't be able to reach him from here!
+
+<<s sky>>
+We might be able to if you roll for it.
+
+<<s scarlet>>
+Really?
+It could be a trap, let's just leave 'em be.
+You want to risk a Soul Token for some random dude?
+If the dice rolls my way, I'm letting him drop.
+
+<<s sky>>
+What if he only has one Soul Token left? We could be his last chance!
+<<PlayMusic none>>
+[[Encounter.2.Roll.1]]
+===
+title: TempEnd
+tags: 
+colorID: 6
+position: 3376,-293
+---
+<<PaintBackground focus>>
+<<PlayMusic encounter>>
+<<s none>>
+And so, Izzy continues forward, joined by Scarlet and Sky.
+
+<<PaintBackground demo>>
+<<PlaySound bonk>>
+<<s house>>
+That's all we have so far, sorry.
+If you've made it to this point, thank you for playing Gambler's Paradise.
+The team of 3 people worked very hard over the course of 72 hours to bring you this game.
+And maybe in the future, you can expect to see more.
+Until then, ta-ta!
+
+<<PaintBackground focus>>
+<<s none>>
+<<PlaySound creepylaugh>>
+Game Over
+<<stop>>
+===
+title: Encounter.1.Roll.1
+tags: 
+colorID: 2
+position: 1231,-236
+---
+<<PaintBackground vessel none>>
+<<s none>>
+<<Vessel spawn>>
+Even odds... I have {$tokens} [plural {$tokens} one = "Soul Token" other = "Soul Tokens"], should I spend one to change them?
+    ->Yes!
+    ->No, Just Roll
+        [[Encounter.1.Roll.2]]
+Do I skew it towards Scarlet or Sky?
+    ->Scarlet
+        <<Vessel scarlet>>
+        <<ChangeTokens -1>>
+        <<PlaySound token1>>
+        Wait really? Really?
+        Your first roll and you're throwing a coin my way?
+        Sky, I think this one has a deathwish.
+    ->Sky
+        <<Vessel sky>>
+        <<ChangeTokens -1>>
+        <<PlaySound token1>>
+        Wow, look at the bigshot over here.
+        Their first roll and they're already using a Soul Token!
+        You probably did the same when you were in this position.
+        There is nothing wrong with wanting to be safe.
+[[Encounter.1.Roll.2]]
+===
+title: Encounter.2.Roll.1
+tags: 
+colorID: 2
+position: 2145,92
+---
+<<PaintBackground vessel none>>
+<<s none>>
+<<Vessel spawn>>
+Even odds... I have {$tokens} [plural {$tokens} one = "Soul Token" other = "Soul Tokens"], should I spend one?
+    ->Yes!
+    ->No, Just Roll
+        [[Encounter.2.Roll.2]]
+Do I skew it towards Scarlet or Sky?
+    ->Scarlet
+        <<Vessel scarlet>>
+        <<ChangeTokens -1>>
+        <<PlaySound token1>>
+        You heard me right? I'm dropping that dude.
+        You want to literally sell your soul to drop that dude.
+        Have I got that right?
+        Sky, I think this one is worse than me!
+        Well, I'm not complaining!
+    ->Sky
+        <<Vessel sky>>
+        <<ChangeTokens -1>>
+        <<PlaySound token1>>
+        What a kind soul, spending a Soul Token to help another.
+        If you get trapped here Izzwald, it's on you.
+[[Encounter.2.Roll.2]]
+===
+title: Encounter.2.Roll.2
+tags: 
+colorID: 2
+position: 2439,98
+---
+<<Vessel roll>>
+<<wait 0.4>>
+<<PlaySound dice2>>
+Please help him...
+
+<<Vessel choose>>
+<<PlaySound dice2>>
+Fate has been decided.
+
+<<Vessel destroy>>
+<<if $wasScarlet>>
+    [[Encounter.2.Scarlet]]
+<<else>>
+    [[Encounter.2.Sky]]
+<<endif>>
+===
+title: Encounter.2.Scarlet
+tags: 
+colorID: 2
+position: 2250,402
+---
+<<PaintBackground demo>>
+<<PlaySound badroll>>
+<<set $saved to false>>
+<<s scarlet>>
+Hahaha, oh yeah.
+
+<<PaiPaintBackground focus>>
+<<s none>>
+In a flash of light, Scarlet's magic takes effect.
+The pathway that the man struggles to keep hold of begins to shrink.
+
+<<PaintBackground demo>>
+<<s izzy>>
+Scarlet, what are you doing? Stop!
+
+<<s scarlet>>
+You get what you roll, buddy! Let me do my thing.
+
+<<s none>>
+"No! No! Please!"
+
+<<s scarlet>>
+Enjoy your stay in Gambler's Paradise!
+
+<<s none>>
+With a shout, the man loses his grip and plummets.
+
+<<s izzy>>
+No!
+
+<<PaintBackground focus>>
+<<PlaySound bonk>>
+<<s none>>
+Izzy flinches as a distant crack confirms that the man did not fall into the endless void below.
+
+<<PaintBackground demo>>
+<<s izzy>>
+You killed him!
+
+<<s scarlet>>
+Nah, guy had all his Soul Tokens, I checked.
+He'll be fine for now.
+Oh, but I did steal one for you, here you go!
+<<ChangeTokens 1>>
+<<PlaySound token2>>
+Now you've got {$tokens}! You can thank me later.
+<<PlayMusic none>>
+[[Observation.2]]
+===
+title: Encounter.2.Sky
+tags: 
+colorID: 2
+position: 2626,400
+---
+<<PaintBackground demo>>
+<<s sky>>
+<<PlaySound goodroll>>
+<<set $saved to true>>
+I'll see what I can do!!
+
+<<PaintBackground focus>>
+<<s none>>
+In a flash of light, the man in peril is safe and stable on a nearby platform.
+
+<<PaintBackground demo>>
+<<PlayMusic encounter>>
+<<s none>>
+"Thank you!"
+Before Izzy can get much of a word in, the man runs off.
+
+<<s sky>>
+You did the right thing, Izzy.
+
+<<s scarlet>>
+Was it worth it?
+Risking a Soul Token for some thanks?
+Real load of good that did. Does your conscious feel good?
+He's as good as gone anyway.
+
+<<s izzy>>
+Technically you two did everything, but you're right, I do feel like we did some good.
+Let's keep moving.
+
+<<s scarlet>>
+You two disgust me.
+<<PlayMusic none>>
+[[Observation.2]]
+===
+title: Observation.2
+tags: 
+colorID: 3
+position: 2735,747
+---
+<<PaintBackground focus>>
+<<PlayMusic creepyalt>>
+<<s none>>
+Elsewhere in Gambler's Paradise...
+
+<<PaintBackground demo>>
+<<s house>>
+Oh my.
+<<if $saved is true>>
+    This one's kindhearted. Saving another is truly admirable.
+    But will this karma help them in the future, or come back to bite them, I wonder.
+<<else>>
+    This one couldn't quite save their fellow traveller. Tsk, tsk.
+    Well, I'm sure if they were to meet again, that poor man wouldn't hold it against her.
+<<endif>>
+
+The vessel I gave her, it was the anomaly, wasn't it...
+Well, more reason to keep a close eye on this one.
+<<PlaySound creepylaugh>>
+I love it!
+<<PlayMusic none>>
+
+[[TempEnd]]
 ===
