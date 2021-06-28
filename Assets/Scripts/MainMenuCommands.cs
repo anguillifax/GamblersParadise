@@ -8,13 +8,11 @@ namespace GamblersParadise
 {
 	internal class MainMenuCommands : MonoBehaviour
 	{
-		public UnityEngine.Object startScene;
-
 		private void Update()
 		{
 			if (Input.GetMouseButtonUp(0))
 			{
-				SceneManager.LoadScene(startScene.name);
+				SceneManager.LoadScene("Dialogue");
 			}
 		}
 

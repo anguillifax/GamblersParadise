@@ -6,7 +6,7 @@ using Yarn.Unity;
 
 namespace GamblersParadise
 {
-	internal class DialogueController : MonoBehaviour, IPointerClickHandler
+	internal class DialogueController : MonoBehaviour
 	{
 		public DialogueUI dialogue;
 
@@ -15,9 +15,12 @@ namespace GamblersParadise
 			dialogue.MarkLineComplete();
 		}
 
-		void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+		private void Update()
 		{
-			Advance();
+			if (Input.GetMouseButtonUp(0))
+			{
+				Advance();
+			}
 		}
 	}
 }
