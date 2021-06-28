@@ -19,7 +19,7 @@ Line End
 title: Intro
 tags: 
 colorID: 1
-position: 595,-58
+position: 593,-64
 ---
 <<PaintBackground focus>>
 <<PaintSpeaker none>>
@@ -27,6 +27,7 @@ Like the sand in an hourglass, the world slips away.
 A young woman wakes up, her surroundings foreign.
 
 <<PaintBackground demo>>
+<<PlayMusic creepyalt>>
 <<PaintSpeaker izzy default>>
 Hnnmgh...What...where am I?
 
@@ -66,9 +67,9 @@ While I do love to see what you humans call free will, many decisions you make w
 You may also use its power to escape tricky situations, if the odds are in your favor.
 Should you feel strongly compelled, you may expend one of these...
 
-<<PlaySound bonk>>
+<<PlaySound token2>>
 <<PaintSpeaker none>>
-The House pulls out a small piece resembling a poke chip.
+The House pulls out a small piece resembling a poker chip.
 
 <<PaintSpeaker house default>>
 This is a Soul Token, a valuable resource. Will it to be so, and you will spend a Soul Token to push the odds of a dice roll.
@@ -102,7 +103,7 @@ I guess the only way to go is forwards.
 title: Encounter.1
 tags: 
 colorID: 2
-position: 940,-68
+position: 939,-72
 ---
 <<PaintBackground focus>>
 <<PlayMusic creepy>>
@@ -121,14 +122,14 @@ Great.
 This is fine, just a challenge to overcome, The House said.
 
 <<sp none>>
-<<PlaySound bonk>>
+<<PlaySound roar>>
 (An eerie noise)
 
 <<sp izzy default>>
 What was that?
 
 <<sp none>>
-<<PlaySound bonk>>
+<<PlaySound roar>>
 (The eerie noise gets closer)
 
 <<sp izzy default>>
@@ -146,7 +147,7 @@ Shit!
 
 <<PaintSpeaker none>>
 Hastily turning the corner, Izzy trips and falls to the ground.
-<<PlaySound bonk>>
+<<PlaySound dice1>>
 With a metallic clatter, the singular die slips from her pocket.
 
 <<PaintSpeaker izzy default>>
@@ -196,12 +197,14 @@ Do I skew it towards Scarlet or Sky?
     ->Scarlet
         <<Vessel scarlet>>
         <<ChangeTokens -1>>
+        <<PlaySound token1>>
         Wait really? Really?
         Your first roll and you're throwing a coin my way?
         Sky, I think this one has a deathwish.
     ->Sky
         <<Vessel sky>>
         <<ChangeTokens -1>>
+        <<PlaySound token1>>
         Wow, look at the bigshot over here.
         Their first roll and they're already using a Soul Token!
         You probably did the same when you were in this position.
@@ -270,7 +273,7 @@ Gee, thanks.
 title: Encounter.1.Sky
 tags: 
 colorID: 2
-position: 1363,283
+position: 1380,319
 ---
 <<PaintBackground demo>>
 <<PaintSpeaker sky>>
@@ -314,7 +317,7 @@ Yeah, we'll just see how long you last.
 title: SampleRollVessel
 tags: 
 colorID: 8
-position: -213,318
+position: -216,315
 ---
 <<PaintBackground focus>>
 Izzy prepares to roll...
@@ -355,7 +358,7 @@ Let's go.
 <<PlaySound bonk>>
 It lands.
 
-<<Vessel hide>>
+<<Vessel destroy>>
 <<if $wasScarlet>>
     OutcomeScarlet
 <<else>>
@@ -379,16 +382,16 @@ Empty Text
 title: Encounter.1.Roll
 tags: 
 colorID: 2
-position: 1251,-29
+position: 1246,-34
 ---
 <<Vessel roll>>
 Please save me...
 
 <<Vessel choose>>
-<<PlaySound bonk>>
+<<PlaySound dice2>>
 Your fate is sealed.
 
-<<Vessel hide>>
+<<Vessel destroy>>
 <<if $wasScarlet>>
     [[Encounter.1.Scarlet]]
 <<else>>
@@ -398,9 +401,10 @@ Your fate is sealed.
 title: Observation.1
 tags: 
 colorID: 3
-position: 1662,640
+position: 1659,640
 ---
 <<PaintBackground focus>>
+<<PlayMusic creepyalt>>
 <<s none>>
 Elsewhere in Gambler's Paradise...
 
@@ -410,6 +414,7 @@ One encounter in and they already seem shaken.
 <<if $tokens eq 1>>
     As entertaining as it was to see them lose so much so fast, I can't have them end things too quickly now.
     <<ChangeTokens 1>>
+    <<PlaySound token2>>
     We'll just give them a little help this once.
     <<PaintBackground focus>>
     <<s none>>
