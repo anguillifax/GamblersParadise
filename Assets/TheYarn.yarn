@@ -26,7 +26,7 @@ position: 590,-66
 Like the sand in an hourglass, the world slips away.
 A young woman wakes up, her surroundings foreign.
 
-<<PaintBackground demo>>
+<<PaintBackground throne>>
 <<PlayMusic creepyalt>>
 <<PaintSpeaker izzy default>>
 Hnnmgh...What...where am I?
@@ -113,7 +113,7 @@ Izzy continues through Gambler's Paradise. As she walks, walls and rooms begin t
 <<PlaySound creepylaugh>>
 What was once an endless plane of existence suddenly shifts to a walled labyrinth with no clear way forward.
 
-<<PaintBackground demo>>
+<<PaintBackground maze>>
 <<PaintSpeaker izzy default>>
 Ummm...this way, I think?
 
@@ -195,7 +195,7 @@ tags:
 colorID: 2
 position: 1049,308
 ---
-<<PaintBackground demo>>
+<<PaintBackground maze>>
 <<PaintSpeaker scarlet>>
 <<PlayMusic creepy>>
 <<PlaySound badroll>>
@@ -207,7 +207,7 @@ With an eerie red glow, the die illuminates the maze. Izzy shields her eyes.
 <<PlayMusic none>>
 When she opens them, all is quiet.
 
-<<PaintBackground demo>>
+<<PaintBackground maze>>
 <<s izzy default>>
 What just happened?
 
@@ -216,7 +216,7 @@ What just happened?
 (Slashing sound)
 
 <<ChangeTokens -1>>
-<<PaintBackground demo>>
+<<PaintBackground void>>
 Izzy wakes up with a start, gasping for breath. Her hands grab at her neck, still intact.
 
 <<s izzy default>>
@@ -255,7 +255,7 @@ tags:
 colorID: 2
 position: 1378,317
 ---
-<<PaintBackground demo>>
+<<PaintBackground maze>>
 <<PlaySound goodroll>>
 <<PaintSpeaker sky>>
 Alright, my time to shine!
@@ -263,7 +263,7 @@ Alright, my time to shine!
 <<PaintBackground focus>>
 <<s none>>
 With a calm, blue glow, the die illuminates the maze in a flash. Izzy shields her eyes.
-<<PaintBackground demo>>
+<<PaintBackground void>>
 When she opens them, the maze is gone.
 
 <<PlayMusic encounter>>
@@ -363,7 +363,7 @@ Empty Text
 title: Encounter.1.Roll.2
 tags: 
 colorID: 2
-position: 1366,41
+position: 1364,40
 ---
 <<Vessel roll>>
 <<wait 0.4>>
@@ -391,7 +391,7 @@ position: 1657,638
 <<s none>>
 Elsewhere in Gambler's Paradise...
 
-<<PaintBackground demo>>
+<<PaintBackground throne>>
 <<s house default>>
 One encounter in and they already seem shaken.
 <<if $tokens eq 1>>
@@ -403,7 +403,7 @@ One encounter in and they already seem shaken.
     <<s none>>
     Somewhere...
     
-    <<PaintBackground demo>>
+    <<PaintBackground void>>
     <<s izzy default>>
     Huh? I thought I was down to 1 Soul Token, but it seems now I have {$tokens}.
 
@@ -427,7 +427,7 @@ position: 1850,86
 Deeper in the endless depths of Gambler's Paradise...
 
 <<PlayMusic encounter>>
-<<PaintBackground demo>>
+<<PaintBackground void>>
 <<s izzy>>
 So, your names are Scarlet and Sky, right?
 
@@ -458,7 +458,7 @@ Izzy drops to the ground, which begins to rise upwards.
 The paths of Gambler's Paradise transform into a hellish obstacle course of twisting walkways and moving platforms.
 Below, the endless void beckons for any who might lose their footing.
 
-<<PaintBackground demo>>
+<<PaintBackground bridge>>
 <<s sky>>
 Oh, I love this challenge.
 Don't look down, Izzy.
@@ -517,7 +517,7 @@ position: 3376,-293
 <<s none>>
 And so, Izzy continues forward, joined by Scarlet and Sky.
 
-<<PaintBackground demo>>
+<<PaintBackground throne>>
 <<PlaySound bonk>>
 <<s house>>
 That's all we have so far, sorry.
@@ -535,7 +535,7 @@ Game Over
 title: Encounter.1.Roll.1
 tags: 
 colorID: 2
-position: 1231,-236
+position: 1230,-236
 ---
 <<PaintBackground vessel none>>
 <<s none>>
@@ -616,9 +616,9 @@ Fate has been decided.
 title: Encounter.2.Scarlet
 tags: 
 colorID: 2
-position: 2250,402
+position: 2249,402
 ---
-<<PaintBackground demo>>
+<<PaintBackground bridge>>
 <<PlaySound badroll>>
 <<set $saved to false>>
 <<s scarlet>>
@@ -629,7 +629,7 @@ Hahaha, oh yeah.
 In a flash of light, Scarlet's magic takes effect.
 The pathway that the man struggles to keep hold of begins to shrink.
 
-<<PaintBackground demo>>
+<<PaintBackground bridge>>
 <<s izzy>>
 Scarlet, what are you doing? Stop!
 
@@ -653,7 +653,7 @@ No!
 <<s none>>
 Izzy flinches as a distant crack confirms that the man did not fall into the endless void below.
 
-<<PaintBackground demo>>
+<<PaintBackground bridge>>
 <<s izzy>>
 You killed him!
 
@@ -672,7 +672,7 @@ tags:
 colorID: 2
 position: 2626,400
 ---
-<<PaintBackground demo>>
+<<PaintBackground bridge>>
 <<s sky>>
 <<PlaySound goodroll>>
 <<set $saved to true>>
@@ -682,7 +682,7 @@ I'll see what I can do!!
 <<s none>>
 In a flash of light, the man in peril is safe and stable on a nearby platform.
 
-<<PaintBackground demo>>
+<<PaintBackground bridge>>
 <<PlayMusic encounter>>
 <<s none>>
 "Thank you!"
@@ -716,7 +716,7 @@ position: 2735,747
 <<s none>>
 Elsewhere in Gambler's Paradise...
 
-<<PaintBackground demo>>
+<<PaintBackground throne>>
 <<s house>>
 Oh my.
 <<if $saved is true>>
