@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Yarn.Unity;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	internal class DialogueController : MonoBehaviour
 	{

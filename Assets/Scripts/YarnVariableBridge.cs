@@ -4,7 +4,7 @@ using UnityEngine;
 using Yarn;
 using Yarn.Unity;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	public class YarnVariableBridge : VariableStorageBehaviour
 	{

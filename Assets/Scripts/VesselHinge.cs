@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	public class VesselHinge : MonoBehaviour
 	{

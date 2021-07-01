@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UObject = UnityEngine.Object;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	internal class EventTimeline : MonoBehaviour
 	{

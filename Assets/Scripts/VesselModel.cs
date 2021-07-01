@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	public class VesselModel : MonoBehaviour
 	{
@@ -37,7 +37,6 @@ namespace GamblersParadise
 
 		private void Start()
 		{
-			BiasEqual();
 			doneAnim = false;
 		}
 
@@ -81,34 +80,20 @@ namespace GamblersParadise
 
 		}
 
-		public void BiasEqual()
+		public void InitSides(int scarletCount)
 		{
-			icons[0].Set(true);
-			icons[1].Set(true);
-			icons[2].Set(true);
-			icons[3].Set(false);
-			icons[4].Set(false);
-			icons[5].Set(false);
+			for (int i = 0; i < 6; i++)
+			{
+				icons[i].Init(i < scarletCount);
+			}
 		}
 
-		public void BiasScarlet()
+		public void Bias(int scarletCount)
 		{
-			icons[0].Set(true);
-			icons[1].Set(true);
-			icons[2].Set(true);
-			icons[3].Set(true);
-			icons[4].Set(true);
-			icons[5].Set(false);
-		}
-
-		public void BiasSky()
-		{
-			icons[0].Set(true);
-			icons[1].Set(false);
-			icons[2].Set(false);
-			icons[3].Set(false);
-			icons[4].Set(false);
-			icons[5].Set(false);
+			for (int i = 0; i < 6; i++)
+			{
+				icons[i].Change(i < scarletCount);
+			}
 		}
 
 		public void Choose()

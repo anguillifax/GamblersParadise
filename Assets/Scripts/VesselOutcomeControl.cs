@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	public class VesselOutcomeControl : MonoBehaviour
 	{

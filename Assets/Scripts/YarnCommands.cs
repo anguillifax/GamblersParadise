@@ -6,7 +6,7 @@ using System;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	public class YarnCommands : MonoBehaviour
 	{
@@ -17,8 +17,8 @@ namespace GamblersParadise
 		public DialogueRunner dialogueRunner;
 		public AudioSource speakerSfx;
 		public PortraitControl portraitControl;
+		public BackgroundControl backgroundControl;
 		public MusicBox musicBox;
-		public Image[] backgroundPanels;
 		public GameObject vesselPrefab;
 		public Transform vesselLocation;
 
@@ -62,63 +62,9 @@ namespace GamblersParadise
 		// Art
 		// =========================================================
 
-		public void PaintSpeaker(string[] args)
-		{
-			if (string.Equals(args[0], "none", StringComparison.OrdinalIgnoreCase))
-			{
-				portraitControl.ClearPortrait();
-				//speakerName.text = "";
-				//dialoguePanel.sprite = basePanel;
-			}
-			else
-			{
-				portraitControl.SetPortrait(args[0], args.Length == 1 ? "default" : args[1]);
-			}
-		}
+		public void PaintSpeaker(string[] args) => portraitControl.SetPortrait(args);
 
-		private void RevealLayout(GameObject show)
-		{
-			foreach (var item in layouts) item.SetActive(false);
-			show.SetActive(true);
-		}
-
-		private void SetBackgroundPanels(Sprite sprite)
-		{
-			if (sprite == null)
-			{
-				foreach (var item in backgroundPanels)
-				{
-					item.gameObject.SetActive(false);
-				}
-			}
-			else
-			{
-				foreach (var item in backgroundPanels)
-				{
-					item.sprite = sprite;
-					item.gameObject.SetActive(true);
-				}
-			}
-		}
-
-		public void PaintBackground(string[] args)
-		{
-			string id = args[0].ToLower();
-			switch (id)
-			{
-				case "focus":
-					RevealLayout(layoutFocus);
-					break;
-				case "vessel":
-					RevealLayout(layoutNormal);
-					SetBackgroundPanels(args[1] == "none" ? null : Resources.Load<Sprite>("Backgrounds/" + args[1]));
-					break;
-				default:
-					RevealLayout(layoutNormal);
-					SetBackgroundPanels(Resources.Load<Sprite>("Backgrounds/" + id));
-					break;
-			}
-		}
+		public void PaintBackground(string[] args) => backgroundControl.SetBackground(args);
 
 		// =========================================================
 		// Sound
@@ -170,12 +116,16 @@ namespace GamblersParadise
 				case "spawn":
 					vesselLocation.gameObject.SetActive(true);
 					vesselInstance = Instantiate(vesselPrefab, vesselLocation).GetComponent<VesselModel>();
+					vesselInstance.InitSides(args.Length == 2 ? int.Parse(args[1]) : 3);
+					break;
+				case "bias":
+					vesselInstance.Bias(int.Parse(args[1]));
 					break;
 				case "scarlet":
-					vesselInstance.BiasScarlet();
+					vesselInstance.Bias(5);
 					break;
 				case "sky":
-					vesselInstance.BiasSky();
+					vesselInstance.Bias(1);
 					break;
 				case "roll":
 					vesselInstance.Roll();

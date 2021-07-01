@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	public class VesselSocket : MonoBehaviour
 	{
@@ -12,7 +12,12 @@ namespace GamblersParadise
 
 		public bool IsScarlet => icon.sprite == scarlet;
 
-		public void Set(bool isScarlet)
+		public void Init(bool isScarlet)
+		{
+			icon.sprite = isScarlet ? scarlet : sky;
+		}
+
+		public void Change(bool isScarlet)
 		{
 			icon.sprite = isScarlet ? scarlet : sky;
 		}

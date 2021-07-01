@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 
-namespace GamblersParadise
+namespace GameJam
 {
 	public class DebugTools : MonoBehaviour
 	{
