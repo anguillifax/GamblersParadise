@@ -98,13 +98,13 @@ The House seems to fade out of existence, leaving Izzy all alone with only the d
 
 <<PaintSpeaker izzy default>>
 I guess the only way to go is forwards.
-<<PlayMusic none>>
+
 [[Encounter.1]]
 ===
 title: Encounter.1
 tags: 
 colorID: 2
-position: 933,-78
+position: 931,-80
 ---
 <<PaintBackground focus>>
 <<PlayMusic creepy>>
@@ -187,7 +187,7 @@ Or if it rolls on mine, well, let's just say I couldn't care less about what hap
 
 <<s izzy default>>
 Great, here goes nothing.
-<<PlayMusic none>>
+
 [[Encounter.1.Roll.1]]
 ===
 title: Encounter.1.Scarlet
@@ -246,7 +246,6 @@ Because I for one can't wait to see you trapped here forever.
 
 <<s izzy default>>
 Gee, thanks.
-<<PlayMusic none>>
 
 [[Observation.1]]
 ===
@@ -292,7 +291,6 @@ Gee, thanks!
 <<s scarlet>>
 Yeah, we'll just see how long you last.
 
-<<PlayMusic none>>
 [[Observation.1]]
 ===
 title: SampleRollVessel
@@ -420,9 +418,10 @@ I can't wait to see what they do next.
 title: Encounter.2
 tags: 
 colorID: 2
-position: 1850,86
+position: 1850,85
 ---
 <<PaintBackground focus>>
+<<PlayMusic none>>
 <<s none>>
 Deeper in the endless depths of Gambler's Paradise...
 
@@ -504,7 +503,6 @@ If the dice rolls my way, I'm letting him drop.
 
 <<s sky>>
 What if he only has one Soul Token left? We could be his last chance!
-<<PlayMusic none>>
 [[Encounter.2.Roll.1]]
 ===
 title: TempEnd
@@ -538,6 +536,7 @@ colorID: 2
 position: 1230,-236
 ---
 <<PaintBackground vessel none>>
+<<PlayMusic none>>
 <<s none>>
 <<Vessel spawn>>
 Even odds... I have {$tokens} [plural {$tokens} one = "Soul Token" other = "Soul Tokens"], should I spend one to change them?
@@ -565,9 +564,10 @@ Do I skew it towards Scarlet or Sky?
 title: Encounter.2.Roll.1
 tags: 
 colorID: 2
-position: 2145,92
+position: 2137,84
 ---
 <<PaintBackground vessel none>>
+<<PlayMusic none>>
 <<s none>>
 <<Vessel spawn>>
 Even odds... I have {$tokens} [plural {$tokens} one = "Soul Token" other = "Soul Tokens"], should I spend one?
@@ -595,7 +595,7 @@ Do I skew it towards Scarlet or Sky?
 title: Encounter.2.Roll.2
 tags: 
 colorID: 2
-position: 2439,98
+position: 2418,74
 ---
 <<Vessel roll>>
 <<wait 0.4>>
@@ -616,7 +616,7 @@ Fate has been decided.
 title: Encounter.2.Scarlet
 tags: 
 colorID: 2
-position: 2249,402
+position: 2249,401
 ---
 <<PaintBackground bridge>>
 <<PlaySound badroll>>
@@ -664,13 +664,12 @@ Oh, but I did steal one for you, here you go!
 <<ChangeTokens 1>>
 <<PlaySound token2>>
 Now you've got {$tokens}! You can thank me later.
-<<PlayMusic none>>
 [[Observation.2]]
 ===
 title: Encounter.2.Sky
 tags: 
 colorID: 2
-position: 2626,400
+position: 2625,395
 ---
 <<PaintBackground bridge>>
 <<s sky>>
@@ -703,13 +702,12 @@ Let's keep moving.
 
 <<s scarlet>>
 You two disgust me.
-<<PlayMusic none>>
 [[Observation.2]]
 ===
 title: Observation.2
 tags: 
 colorID: 3
-position: 2735,747
+position: 2733,743
 ---
 <<PaintBackground focus>>
 <<PlayMusic creepyalt>>
@@ -723,7 +721,7 @@ Oh my.
     This one's kindhearted. Saving another is truly admirable.
     But will this karma help them in the future, or come back to bite them, I wonder.
 <<else>>
-    This one couldn't quite save their fellow traveller. Tsk, tsk.
+    This one couldn't quite save their fellow traveler. Tsk, tsk.
     Well, I'm sure if they were to meet again, that poor man wouldn't hold it against her.
 <<endif>>
 
@@ -731,7 +729,205 @@ The vessel I gave her, it was the anomaly, wasn't it...
 Well, more reason to keep a close eye on this one.
 <<PlaySound creepylaugh>>
 I love it!
-<<PlayMusic none>>
 
 [[TempEnd]]
+===
+title: Special.Encounter.1
+tags: 
+colorID: 0
+position: 3238,345
+---
+<<PaintBackground focus>>
+<<s none>>
+In the safe embrace of the Oasis, a young girl curls against the wall...
+
+<<PaintBackground vessel none>>
+<<s none>>
+<<Vessel spawn>>
+...
+<<Vessel roll>>
+<<wait 0.4>>
+<<PlaySound dice2>>
+...
+<<Vessel choose>>
+<<PlaySound dice2>>
+...
+<<Vessel destroy>>
+<<PaintBackground void>>
+<<if $wasScarlet>>
+    <<s scarlet>>
+    Hey! What do you think you're doing!
+    We aren't some cheap toy!
+<<else>>
+    <<s sky>>
+    Izzy? Are you Okay?
+<<endif>>
+
+<<PaintBackground vessel none>>
+<<s none>>
+<<Vessel spawn>>
+...
+<<Vessel roll>>
+<<wait 0.4>>
+<<PlaySound dice2>>
+...
+<<Vessel choose>>
+<<PlaySound dice2>>
+...
+<<Vessel destroy>>
+<<PaintBackground void>>
+<<if $wasScarlet>>
+    <<s scarlet>>
+    Hey Izzwald, knock it off!
+    I'm not doing anything for you!
+<<else>>
+    <<s sky>>
+    Izzy? Do you want to talk about this?
+<<endif>>
+
+<<PaintBackground vessel none>>
+<<s none>>
+<<Vessel spawn>>
+...
+<<Vessel roll>>
+<<wait 0.4>>
+<<PlaySound dice2>>
+...
+<<Vessel choose>>
+<<PlaySound dice2>>
+...
+<<Vessel destroy>>
+<<PaintBackground void>>
+<<s scarlet>>
+Hey kid...
+
+<<s sky>>
+Talk to us, please.
+
+<<s izzy>>
+I'm scared...
+I don't know what to do. All I have are questions, and I never get the answers.
+Will I ever get out of this place?
+Will I ever go home?
+
+<<PaintBackground focus>>
+<<PlaySound dice1>>
+Sobbing, Izzy hurls the die across the room.
+
+<<PaintBackground vessel none>>
+<<s none>>
+<<Vessel spawn>>
+...
+<<Vessel roll>>
+<<wait 0.4>>
+<<PlaySound dice2>>
+...
+<<Vessel choose>>
+<<PlaySound dice2>>
+...
+<<Vessel destroy>>
+<<PaintBackground void>>
+<<if $wasScarlet>>
+    <<s scarlet>>
+    [[Special.Encounter.1.Scarlet]]
+<<else>>
+    <<s sky>>
+    [[Special.Encounter.1.Sky]]
+<<endif>>
+===
+title: Special.Encounter.1.Scarlet
+tags: 
+colorID: 0
+position: 3164,611
+---
+<<PaintBackground void>>
+<<s scarlet>>
+Hey, kid, I uh...
+I know that you're going through hell, and I sure as hell ain't helping.
+But uh, I can't stand to see a kiddo cry.
+
+<<s sky>>
+Scar, do you actually have a heart in there somewhere?
+
+<<s scarlet>>
+Shove it, Sky!
+You know, the thought of someone else escaping Gambler's Paradise makes me sick.
+When I couldn't make it after everything I'd been through. It just, it should have been me.
+But...
+I guess I'd be a little okay with it if you would be the first to escape.
+...
+When we get out of this cave, I still gotta cost you if you roll me.
+Gotta keep up appearances and all for good old spade face.
+But I'll try to go easier on you. For a bit.
+
+<<s izzy>>
+Thanks, Scarlet.
+
+<<s scarlet>>
+Don't mention it. Like really, do not mention this.
+
+<<s sky>>
+Stay strong, Izzy. You've been very brave.
+
+<<s scarlet>>
+Yeah, keep your head up kid. No more tears.
+When the time comes, we'll give The House a run for his money, alright?
+
+<<s izzy>>
+Right.
+===
+title: Special.Encounter.1.Sky
+tags: 
+colorID: 0
+position: 3434,598
+---
+<<PaintBackground void>>
+<<s sky>>
+Izzy, I know things are tough, but you aren't alone.
+You are never alone.
+For what it's worth, I'll do whatever I can to get you home.
+
+<<s scarlet>>
+You probably say that to every crying sap that's laid hands on you.
+
+<<s sky>>
+You shut up! Look at her, Scar.
+You've done nothing but make things worse for her.
+
+<<s izzy>>
+I think Scarlet's right.
+
+<<s scarlet>>
+Hah! Take that Sky!
+Wait, hold on though kid...
+That time I was mostly joking.
+
+<<s izzy>>
+No, you two have been with hundreds of travelers who didn't make it.
+I'm not special, I'm no different. 
+Just another lost soul in Gambler's Paradise.
+
+<<s sky>>
+I- you-
+You're right. I have seen so many people trapped here, just like me.
+I've never seen one make it to the gates of Gambler's Paradise.
+And maybe that makes my words hollow, but I promise you Izzy, I won't give up on you.
+I'll prove it to you.
+When we get out of here, I'm going to make things go your way.
+At least as much as I can without tipping The House off.
+
+<<s izzy>>
+Thank you, Sky.
+
+<<s scarlet>>
+Yeah, just go and push me out of the equation huh?
+...
+I've got appearances to maintain too you know!
+But uh, I may have been a little bit tough on the kid.
+I'll chip in too, go a little easier on you kiddo. For a bit.
+Don't go crying your eyes out now.
+When it comes down to it, we're gonna give The House a run for his money.
+
+<<s sky>>
+Stay strong, Izzy.
 ===
