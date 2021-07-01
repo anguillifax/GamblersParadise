@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcess
   - Water
   - UI
   - 
@@ -41,9 +41,9 @@ TagManager:
   - name: Background
     uniqueID: 4175442445
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Particles
     uniqueID: 4092917955
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
