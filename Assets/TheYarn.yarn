@@ -508,7 +508,7 @@ What if he only has one Soul Token left? We could be his last chance!
 title: TempEnd
 tags: 
 colorID: 6
-position: 3376,-293
+position: 3822,-558
 ---
 <<PaintBackground focus>>
 <<PlayMusic encounter>>
@@ -523,12 +523,7 @@ If you've made it to this point, thank you for playing Gambler's Paradise.
 The team of 3 people worked very hard over the course of 72 hours to bring you this game.
 And maybe in the future, you can expect to see more.
 Until then, ta-ta!
-
-<<PaintBackground focus>>
-<<s none>>
-<<PlaySound creepylaugh>>
-Game Over
-<<stop>>
+[[gameover]]
 ===
 title: Encounter.1.Roll.1
 tags: 
@@ -595,7 +590,7 @@ Do I skew it towards Scarlet or Sky?
 title: Encounter.2.Roll.2
 tags: 
 colorID: 2
-position: 2418,74
+position: 2428,90
 ---
 <<Vessel roll>>
 <<wait 0.4>>
@@ -616,7 +611,7 @@ Fate has been decided.
 title: Encounter.2.Scarlet
 tags: 
 colorID: 2
-position: 2249,401
+position: 2246,398
 ---
 <<PaintBackground bridge>>
 <<PlaySound badroll>>
@@ -669,7 +664,7 @@ Now you've got {$tokens}! You can thank me later.
 title: Encounter.2.Sky
 tags: 
 colorID: 2
-position: 2625,395
+position: 2624,394
 ---
 <<PaintBackground bridge>>
 <<s sky>>
@@ -707,7 +702,7 @@ You two disgust me.
 title: Observation.2
 tags: 
 colorID: 3
-position: 2733,743
+position: 2729,739
 ---
 <<PaintBackground focus>>
 <<PlayMusic creepyalt>>
@@ -722,7 +717,7 @@ Oh my.
     But will this karma help them in the future, or come back to bite them, I wonder.
 <<else>>
     This one couldn't quite save their fellow traveler. Tsk, tsk.
-    Well, I'm sure if they were to meet again, that poor man wouldn't hold it against her.
+    Well, if they were to meet again, surely that poor man wouldn't hold it against her.
 <<endif>>
 
 The vessel I gave her, it was the anomaly, wasn't it...
@@ -730,12 +725,12 @@ Well, more reason to keep a close eye on this one.
 <<PlaySound creepylaugh>>
 I love it!
 
-[[TempEnd]]
+[[Encounter.3]]
 ===
 title: Special.Encounter.1
 tags: 
 colorID: 0
-position: 3238,345
+position: 3728,1059
 ---
 <<PaintBackground focus>>
 <<s none>>
@@ -838,7 +833,7 @@ Sobbing, Izzy hurls the die across the room.
 title: Special.Encounter.1.Scarlet
 tags: 
 colorID: 0
-position: 3164,611
+position: 3654,1325
 ---
 <<PaintBackground void>>
 <<s scarlet>>
@@ -879,7 +874,7 @@ Right.
 title: Special.Encounter.1.Sky
 tags: 
 colorID: 0
-position: 3434,598
+position: 3924,1312
 ---
 <<PaintBackground void>>
 <<s sky>>
@@ -930,4 +925,63 @@ When it comes down to it, we're gonna give The House a run for his money.
 
 <<s sky>>
 Stay strong, Izzy.
+===
+title: gameover
+tags: 
+colorID: 7
+position: 4262,-560
+---
+<<PaintBackground focus>>
+<<s none>>
+<<PlayMusic gameover>>
+<<PlaySound creepylaugh>>
+Game Over
+<<stop>>
+===
+title: Encounter.3
+tags: 
+colorID: 2
+position: 3129,96
+---
+<<PaintBackground focus>>
+<<PlayMusic none>>
+<<s none>>
+Beyond the endless chasms of Gambler's Paradise...
+
+<<PaintBackground void>>
+<<s izzy>>
+Hey, can we talk? What's the deal with you two?
+Sky, why are you always helping me?
+And Scarlet, why are you so set on hurting me instead?
+
+<<s sky>>
+The House told you that if you make it through the Paradise, you'll go free, right?
+Well if you make it out, we go free as well.
+
+<<s izzy>>
+!!!
+
+<<s scarlet>>
+Yeah, it would be just dandy...
+If it ever did happen. Trust me, it's not going to.
+I've been stuck to hundreds of souls trying to escape Gambler's Paradise just like you.
+Not one made it.
+You're not special. Don't you dare give me any hope that things are different, because they aren't.
+
+<<s izzy>>
+Wait a minute, you two are trapped here too?
+I thought you were spirits or something.
+
+<<s scarlet>>
+God, Sky, this one is dense.
+What do you think happens to all the people that don't escape? What happens when you lose your Soul Tokens?
+What do you think happened to me...
+You know what, I take it back, you are special.
+
+<<s sky>>
+You can't blame her for not knowing, Scar.
+The House keeps things cryptic on purpose.
+
+<<s izzy>>
+What do you mean?
 ===
