@@ -480,7 +480,7 @@ I'll try.
 The pathway seems to grow thinner and less steady the further Izzy goes.
 Just as Izzy is about to make it across, a scared voice calls to them.
 
-<<s none>>
+<<s cliffman>>
 "Hey! Help me, please!"
 
 <<s izzy>>
@@ -619,7 +619,7 @@ position: 2246,398
 <<s scarlet>>
 Hahaha, oh yeah.
 
-<<PaiPaintBackground focus>>
+<<PaintBackground focus>>
 <<s none>>
 In a flash of light, Scarlet's magic takes effect.
 The pathway that the man struggles to keep hold of begins to shrink.
@@ -631,7 +631,7 @@ Scarlet, what are you doing? Stop!
 <<s scarlet>>
 You get what you roll, buddy! Let me do my thing.
 
-<<s none>>
+<<s cliffman>>
 "No! No! Please!"
 
 <<s scarlet>>
@@ -678,8 +678,10 @@ In a flash of light, the man in peril is safe and stable on a nearby platform.
 
 <<PaintBackground bridge>>
 <<PlayMusic encounter>>
-<<s none>>
+<<s cliffman>>
 "Thank you!"
+
+<<s none>>
 Before Izzy can get much of a word in, the man runs off.
 
 <<s sky>>

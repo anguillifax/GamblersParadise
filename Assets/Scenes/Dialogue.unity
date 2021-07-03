@@ -440,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &453637138
 RectTransform:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &511530941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -613,6 +613,7 @@ MonoBehaviour:
   - scarlet;Scarlet
   - sky;Sky
   - house;The House
+  - cliffman;Unfortunate Soul
   lastPortrait: 
 --- !u!114 &592744601
 MonoBehaviour:
@@ -3764,7 +3765,7 @@ MonoBehaviour:
     duration: 0.2
     current: 0
   deadzone:
-    duration: 7
+    duration: 5
     current: 0
   continueAnim: {fileID: 1568679396}
 --- !u!4 &4715281878806084771
