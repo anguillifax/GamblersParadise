@@ -19,7 +19,7 @@ Line End
 title: Intro
 tags: 
 colorID: 1
-position: 590,-66
+position: 589,-67
 ---
 <<PaintBackground focus>>
 <<PaintSpeaker none>>
@@ -69,7 +69,7 @@ You may also use its power to escape tricky situations, if the odds are in your 
 Should you feel strongly compelled, you may expend one of these...
 
 <<PlaySound token2>>
-<<PaintSpeaker none>>
+<<PaintSpeaker misc soultoken>>
 The House pulls out a small piece resembling a poker chip.
 
 <<PaintSpeaker house default>>

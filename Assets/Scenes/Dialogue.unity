@@ -615,11 +615,14 @@ MonoBehaviour:
   - sky;Sky
   - house;The House
   - cliffman;Unfortunate Soul
-  - credits_bryan;Bryan Sturm
-  - credits_riley;Riley Park
-  - credits_henry;Henry Doma
-  - credits_extra;Special Thanks
-  - credits_extra2;Special Thanks
+  creditNames:
+  - henry;Henry Doma
+  - riley;Riley Park
+  - bryan;Bryan Sturm
+  - extra1;Special Thanks
+  - extra2;Special Thanks
+  miscNames:
+  - soultoken;
   lastPortrait: 
 --- !u!114 &592744601
 MonoBehaviour:

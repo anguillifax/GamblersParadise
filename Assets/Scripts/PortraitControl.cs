@@ -13,13 +13,19 @@ namespace GameJam
 		public SpriteRenderer portraitRenderer;
 		public TextMeshProUGUI speakerField;
 		public string[] speakerDisplayNames;
+		public string[] creditNames;
+		public string[] miscNames;
 		public string lastPortrait;
 
 		private Dictionary<string, string> speakerMap;
+		private Dictionary<string, string> creditMap;
+		private Dictionary<string, string> miscMap;
 
 		private void Awake()
 		{
 			speakerMap = speakerDisplayNames.ToDictionary(x => x.Split(';')[0], x => x.Split(';')[1]);
+			creditMap = creditNames.ToDictionary(x => x.Split(';')[0], x => x.Split(';')[1]);
+			miscMap = miscNames.ToDictionary(x => x.Split(';')[0], x => x.Split(';')[1]);
 			lastPortrait = string.Empty;
 		}
 
@@ -67,14 +73,27 @@ namespace GameJam
 
 			portraitRenderer.sprite = sprite;
 
-			if (speakerMap.TryGetValue(id, out string displayName))
+			switch (id)
 			{
-				speakerField.text = displayName;
-			}
-			else
-			{
-				Debug.LogWarning("Display name not found for " + id);
-				speakerField.text = string.Empty;
+				case "misc":
+					speakerField.text = miscMap[portrait];
+					break;
+
+				case "credits":
+					speakerField.text = creditMap[portrait];
+					break;
+
+				default:
+					if (speakerMap.TryGetValue(id, out string displayName))
+					{
+						speakerField.text = displayName;
+					}
+					else
+					{
+						Debug.LogWarning("Display name not found for " + id);
+						speakerField.text = string.Empty;
+					}
+					break;
 			}
 		}
 	}
